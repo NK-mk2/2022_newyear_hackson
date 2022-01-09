@@ -7,7 +7,7 @@ public class GManager : MonoBehaviour
 {
     public static GManager instance = null;
 
-    [Header("名前")] public string player_name;
+    [Header("名前")] public string player_name = null;
 
 
     // シーンに一つしか作成されないように
