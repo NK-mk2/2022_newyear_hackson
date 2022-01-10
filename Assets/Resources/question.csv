@@ -1,0 +1,11 @@
+quiz_id,age,genre,title,choice_1,choice_2,choice_3,choice_4,answer
+1,1,1,1問目,A,B,C,D,A
+2,2,2,2問目,A,B,C,D,B
+3,3,3,3問目,A,B,C,D,C
+4,1,4,4問目,A,B,C,D,D
+5,2,5,5問目,A,B,C,D,A
+6,3,1,6問目,A,B,C,D,B
+7,1,2,7問目,A,B,C,D,C
+8,2,3,8問目,A,B,C,D,D
+9,3,4,9問目,A,B,C,D,A
+10,1,5,10問目,A,B,C,D,B

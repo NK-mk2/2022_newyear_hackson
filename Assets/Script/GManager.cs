@@ -8,6 +8,8 @@ public class GManager : MonoBehaviour
     public static GManager instance = null;
 
     [Header("名前")] public string player_name = null;
+    [Header("スコア")] public int score;
+    [Header("問題数")] public int questionNum = 0;
 
 
     // シーンに一つしか作成されないように
@@ -21,6 +23,15 @@ public class GManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    /**
+     * 回答した問題数を増やす
+     */
+    public void AddQuestionNum() {
+        if ( questionNum < 11 ) {
+            ++questionNum;
         }
     }
 }
