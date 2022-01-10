@@ -17,42 +17,61 @@ public class QuizScene : MonoBehaviour
     private int k = 0; // 配列の変数
     private int qransu = 0; // 出題する問題の行
 
-    void Start()
-    {
+    void Start() {
         Debug.Log("Scene Start!");
-        GetQuizList();
+        // 問題の生成
+        CreateQuestion();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void CreateQuestion() {
+        // 回答済みの問題数を取得
+        int questionCount = GManager.instance.questionNum;
+        Debug.Log(questionCount);
+        if ( questionCount == 0 ) {
+            quizFile = Resources.Load("question") as TextAsset; // Resource配下のCSV読み込み
+            StringReader reader = new StringReader(quizFile.text);
+            // reader.Peekが-1になるまで
+            while (reader.Peek() != -1){
+                string line = reader.ReadLine(); // 1行ずつ読み込み
+                quizDatas.Add(line.Split(',')); // ,区切りでリストに追加
+                csvrow++; // CSVファイルの行数をカウント
+            }
+            for (int j = 1; j <= csvrow-1; j++) {
+                qnumber.Add(j); // CSVファイルの行をリストに追加(1行目は除外)
+            }
+            qnumber = qnumber.OrderBy( a => System.Guid.NewGuid () ).ToList(); // 読み込んだリストをシャッフル
+
+            csvrow = 0; // 変数初期化
+        }
+
+        // 10問終わったらresultへ
+        if ( questionCount > 10 ) {
+            // 結果ページに遷移
+        } else {
+            qransu = qnumber[questionCount]; // シャッフルされたリストから問題を取得
+            QuestionLabelSet();
+            AnswerLabelSet();
+        }
     }
 
     /**
-     * クイズの情報をCSVから取得
-     */
-    private void GetQuizList() {
-        quizFile = Resources.Load("question") as TextAsset; // Resource配下のCSV読み込み
-        StringReader reader = new StringReader(quizFile.text);
-        // reader.Peekが-1になるまで
-        while (reader.Peek() != -1){
-            string line = reader.ReadLine(); // 1行ずつ読み込み
-            quizDatas.Add(line.Split(',')); // ,区切りでリストに追加
-            csvrow++; // CSVファイルの行数をカウント
-        }
-        for (int j = 1; j <= csvrow-1; j++) {
-            qnumber.Add(j); // CSVファイルの行をリストに追加(1行目は除外)
-        }
-        qnumber = qnumber.OrderBy( a => System.Guid.NewGuid () ).ToList(); // 読み込んだリストをシャッフル
-
-        csvrow = 0; // 変数初期化
-
-        qransu = qnumber[3]; // シャッフルされたリストから問題を取得
-        QuestionLabelSet();
-        AnswerLabelSet();
-    }
-
+    * 問題文のセット
+    */
     private void QuestionLabelSet() {
-        quizDatas[k] = quizDatas[qransu]; // CSVの"qranse"行目の問題を取得
+        quizDatas[k] = quizDatas[qransu]; // CSVの"qransu"行目の問題を取得
         Text qLabel = GameObject.Find("Canvas/Question").GetComponent<Text>();
         qLabel.text = quizDatas[k][3];
     }
 
+    /**
+    * 解答をボタンにセット
+    */
     private void AnswerLabelSet() {
         // 解答文面の作成
         string[] array = new string[] { quizDatas[k][4], quizDatas[k][5], quizDatas[k][6], quizDatas[k][7] };
@@ -65,9 +84,23 @@ public class QuizScene : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    /**
+    * 解答ボタンが押された時
+    */
+    public void OnClick() {
+        Debug.Log("ボタンが押された");
+        //選択したボタンのテキストラベルを取得する
+        Text selectedBtn = this.GetComponentInChildren<Text> ();
+        Debug.Log("ボタン" + selectedBtn.text);
+        Debug.Log("答え" + answer);
+        if ( selectedBtn.text == answer ) {
+            Debug.Log("正解！");
+        } else {
+            Debug.Log("不正解!");
+        }
+        // 解答した問題数を増やす
+        GManager.instance.AddQuestionNum();
+        // 次の問題へ
+        CreateQuestion();
     }
 }
