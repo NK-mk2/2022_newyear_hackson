@@ -18,6 +18,7 @@ public class QuizScene : MonoBehaviour
     private int k = 0; // 配列の変数
     private int qransu = 0; // 出題する問題の行
 
+
     public float countdowntime = 10.0f; // 制限時間
     public Text timeText; // 時間を表示するtext型の変数
     public static bool isAnswer = false;
@@ -53,7 +54,6 @@ public class QuizScene : MonoBehaviour
                 qnumber.Add(j); // CSVファイルの行をリストに追加(1行目は除外)
             }
             qnumber = qnumber.OrderBy( a => System.Guid.NewGuid () ).ToList(); // 読み込んだリストをシャッフル
-
             csvrow = 0; // 変数初期化
         }
 
@@ -90,6 +90,7 @@ public class QuizScene : MonoBehaviour
             answer = quizDatas[k][8];
         }
     }
+
 
     private void Countdown()
     {
