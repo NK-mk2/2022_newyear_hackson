@@ -17,8 +17,12 @@ public class QuizScene : MonoBehaviour
     private int k = 0; // 配列の変数
     private int qransu = 0; // 出題する問題の行
 
+    public float countdowntime = 10.0f; // 制限時間
+    public Text timeText; // 時間を表示するtext型の変数
+
     void Start() {
         Debug.Log("Scene Start!");
+        timeText = GameObject.Find("Canvas/Timelimit").GetComponent<Text> (); // 時間制限のテキストを取得
         // 問題の生成
         CreateQuestion();
     }
@@ -26,7 +30,7 @@ public class QuizScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Countdown();
     }
 
     private void CreateQuestion() {
@@ -81,6 +85,20 @@ public class QuizScene : MonoBehaviour
             Text answerLabel = GameObject.Find("Canvas/Button" + i).GetComponentInChildren<Text>();
             answerLabel.text = array[i-1];
             answer = quizDatas[k][8];
+        }
+    }
+
+    private void Countdown()
+    {
+        countdowntime -= Time.deltaTime; //時間をカウントダウンする
+        timeText.text = countdowntime.ToString("F1") + "秒"; //時間を表示する
+        //countdownが0以下になったとき
+        if (countdowntime <= 0)
+        {
+            //string answerText = answerget();
+            Debug.Log("不正解");
+            //SceneManager.LoadScene("result");
+            //resultmanager.SetJudgeData ("不正解",answerText);
         }
     }
 
