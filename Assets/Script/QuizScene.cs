@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 using System.Linq;
 
@@ -19,6 +20,7 @@ public class QuizScene : MonoBehaviour
 
     public float countdowntime = 10.0f; // 制限時間
     public Text timeText; // 時間を表示するtext型の変数
+    public static bool isAnswer = false;
 
     void Start() {
         Debug.Log("Scene Start!");
@@ -38,6 +40,7 @@ public class QuizScene : MonoBehaviour
         int questionCount = GManager.instance.questionNum;
         Debug.Log(questionCount);
         if ( questionCount == 0 ) {
+            Debug.Log("CSV作る");
             quizFile = Resources.Load("question") as TextAsset; // Resource配下のCSV読み込み
             StringReader reader = new StringReader(quizFile.text);
             // reader.Peekが-1になるまで
@@ -97,8 +100,8 @@ public class QuizScene : MonoBehaviour
         {
             //string answerText = answerget();
             Debug.Log("不正解");
-            //SceneManager.LoadScene("result");
-            //resultmanager.SetJudgeData ("不正解",answerText);
+            isAnswer = false;
+            SceneManager.LoadScene("Result");
         }
     }
 
@@ -113,12 +116,16 @@ public class QuizScene : MonoBehaviour
         Debug.Log("答え" + answer);
         if ( selectedBtn.text == answer ) {
             Debug.Log("正解！");
+            isAnswer = true;
+            SceneManager.LoadScene("Result");
         } else {
             Debug.Log("不正解!");
+            isAnswer = false;
+            SceneManager.LoadScene("Result");
         }
         // 解答した問題数を増やす
         GManager.instance.AddQuestionNum();
         // 次の問題へ
-        CreateQuestion();
+        //CreateQuestion();
     }
 }
