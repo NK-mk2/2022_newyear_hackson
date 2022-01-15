@@ -8,7 +8,7 @@ public class GManager : MonoBehaviour
     public static GManager instance = null;
 
     [Header("名前")] public string player_name = null;
-    [Header("スコア")] public int score;
+    [Header("スコア")] public int score = 0;
     [Header("問題数")] public int questionNum = 0;
 
 
@@ -33,5 +33,12 @@ public class GManager : MonoBehaviour
         if ( questionNum < 11 ) {
             ++questionNum;
         }
+    }
+
+    /**
+     *
+     */
+    public void AddScore(int nowScore) {
+        score += nowScore;
     }
 }

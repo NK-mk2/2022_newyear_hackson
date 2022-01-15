@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 using System.IO;
 using System.Linq;
 
@@ -17,14 +18,11 @@ public class QuizScene : MonoBehaviour
     public static string answer; // クイズの答え
     private int k = 0; // 配列の変数
     private int qransu = 0; // 出題する問題の行
-
-
     public float countdowntime = 10.0f; // 制限時間
     public Text timeText; // 時間を表示するtext型の変数
     public static bool isAnswer = false;
 
     void Start() {
-        Debug.Log("Scene Start!");
         timeText = GameObject.Find("Canvas/Timelimit").GetComponent<Text> (); // 時間制限のテキストを取得
         // 問題の生成
         CreateQuestion();
@@ -33,6 +31,7 @@ public class QuizScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 制限時間のカウントダウン
         Countdown();
     }
 
@@ -57,14 +56,9 @@ public class QuizScene : MonoBehaviour
             csvrow = 0; // 変数初期化
         }
 
-        // 10問終わったらresultへ
-        if ( questionCount > 10 ) {
-            // 結果ページに遷移
-        } else {
-            qransu = qnumber[questionCount]; // シャッフルされたリストから問題を取得
-            QuestionLabelSet();
-            AnswerLabelSet();
-        }
+        qransu = qnumber[questionCount]; // シャッフルされたリストから問題を取得
+        QuestionLabelSet();
+        AnswerLabelSet();
     }
 
     /**
@@ -100,7 +94,6 @@ public class QuizScene : MonoBehaviour
         if (countdowntime <= 0)
         {
             //string answerText = answerget();
-            Debug.Log("不正解");
             isAnswer = false;
             SceneManager.LoadScene("Result");
         }
@@ -110,23 +103,19 @@ public class QuizScene : MonoBehaviour
     * 解答ボタンが押された時
     */
     public void OnClick() {
-        Debug.Log("ボタンが押された");
         //選択したボタンのテキストラベルを取得する
         Text selectedBtn = this.GetComponentInChildren<Text> ();
-        Debug.Log("ボタン" + selectedBtn.text);
-        Debug.Log("答え" + answer);
+        // ボタンを押したら正誤判定をして結果ページへ
         if ( selectedBtn.text == answer ) {
-            Debug.Log("正解！");
             isAnswer = true;
+            // 正解の場合のみスコアを追加する
+            int addScore = (int)Math.Round(countdowntime) * 100;
+            GManager.instance.AddScore(addScore);
+            Debug.Log(GManager.instance.score);
             SceneManager.LoadScene("Result");
         } else {
-            Debug.Log("不正解!");
             isAnswer = false;
             SceneManager.LoadScene("Result");
         }
-        // 解答した問題数を増やす
-        GManager.instance.AddQuestionNum();
-        // 次の問題へ
-        //CreateQuestion();
     }
 }

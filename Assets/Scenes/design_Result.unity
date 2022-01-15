@@ -533,17 +533,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc1f0ab6c72414bae92e170fd729c1fe, type: 3}
---- !u!114 &548991660 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6273561469089500504, guid: fc1f0ab6c72414bae92e170fd729c1fe, type: 3}
-  m_PrefabInstance: {fileID: 548991659}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ee2eb847a864ec1b9a4db00a3fa094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &548991661 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2597169691039412847, guid: fc1f0ab6c72414bae92e170fd729c1fe, type: 3}
@@ -732,10 +721,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 748372274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db90ed1bfb9254c91a07f17521f85666, type: 3}
+  m_Script: {fileID: 11500000, guid: e06ed8de687c040308737a6c00a2905d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 548991660}
+  scoreText: {fileID: 0}
 --- !u!1 &778187656
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,7 +963,7 @@ GameObject:
   - component: {fileID: 1190470971}
   - component: {fileID: 1190470970}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,7 +1021,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1234567
+  m_Text: 
 --- !u!222 &1190470971
 CanvasRenderer:
   m_ObjectHideFlags: 0

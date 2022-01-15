@@ -984,12 +984,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 687827499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
+  m_Script: {fileID: 11500000, guid: e06ed8de687c040308737a6c00a2905d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvrow: 0
-  countdowntime: 10
-  timeText: {fileID: 0}
+  nameText: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &790984610
 GameObject:
   m_ObjectHideFlags: 0
