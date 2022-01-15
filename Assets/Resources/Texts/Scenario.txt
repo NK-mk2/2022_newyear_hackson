@@ -1,13 +1,9 @@
 !background_sprite="background_sprite1"
-!charaimg_sprite="polygon"="background_sprite2"
+!charaimg_sprite="polygon"="character_hakase"
 !charaimg_size="polygon"="500, 500, 1"
+!charaimg_pos="character_hakase"="0,0,0"
 
-&みにに「Hello,World!」
-&みにに「これはテキスト表示のサンプルです」
-
-&!background_sprite="background_sprite2"
-!background_color="255,0,255"
-!charaimg_pos="polygon"="-500, 500, 0"
-&名無し「こんにちは！」&
+&博士「Hello,World!」
+&博士「君の力が必要なんだ」&
 !scene="Quiz"
 
