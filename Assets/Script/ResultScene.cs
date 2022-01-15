@@ -46,7 +46,7 @@ public class ResultScene : MonoBehaviour
         if( questionCount >= 10 ) {
             // 開発中は最終結果ページに飛ばす
             //SceneManager.LoadScene("Story");
-            SceneManager.LoadScene("Finish");
+            SceneManager.LoadScene("design_Result");
         } else {
             SceneManager.LoadScene("Quiz");
         }
