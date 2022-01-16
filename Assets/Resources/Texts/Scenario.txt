@@ -1,9 +1,9 @@
 !background_sprite="background_sprite1"
-!charaimg_sprite="polygon"="character_hakase"
-!charaimg_size="polygon"="500, 500, 1"
-!charaimg_pos="character_hakase"="0,0,0"
+!charaimg_sprite="polygon"="chara_003"
+&!charaimg_size="polygon"="500, 500, 1"
+&!charaimg_pos="polygon"="0,0,0"
 
-&博士「Hello,World!」
-&博士「君の力が必要なんだ」&
+&博士「おお！よくぞ目覚めた!」
+&博士「今こそお主の力が必要なのだ」&
 !scene="Quiz"
 
