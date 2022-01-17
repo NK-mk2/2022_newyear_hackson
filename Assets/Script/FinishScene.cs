@@ -15,7 +15,7 @@ public class FinishScene : MonoBehaviour
         // 各UIにセットするパラメータを取得してcompornentに設定する
         // スコア
         Debug.Log(GManager.instance.score);
-        scoreText = GameObject.Find("Canvas/Score/ScoreText").GetComponent<Text>();
+        scoreText = GameObject.Find("Canvas/01_Result/Score/ScoreText").GetComponent<Text>();
         scoreText.text = GManager.instance.score.ToString("F0");
     }
 
