@@ -9,7 +9,7 @@ public class GManager : MonoBehaviour
 
     [Header("名前")] public string player_name = null;
     [Header("スコア")] public int score = 0;
-    [Header("問題数")] public int questionNum = 0;
+    [Header("問題数")] public int questionNum = 1;
 
 
     // シーンに一つしか作成されないように
@@ -30,6 +30,7 @@ public class GManager : MonoBehaviour
      * 回答した問題数を増やす
      */
     public void AddQuestionNum() {
+        Debug.Log("add");
         if ( questionNum < 11 ) {
             ++questionNum;
         }

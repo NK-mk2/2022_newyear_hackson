@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player_name: 
+  score: 0
+  questionNum: 1
