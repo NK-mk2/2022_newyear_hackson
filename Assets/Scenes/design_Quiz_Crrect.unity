@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90074bdf3157d462aad8b837a9299681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resultText: {fileID: 0}
   questionCount: 0
+  getCollection: {fileID: 1015953283}
 --- !u!114 &266867370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 266867369}
-        m_TargetAssemblyTypeName: ResultScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: CorrectScene, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:

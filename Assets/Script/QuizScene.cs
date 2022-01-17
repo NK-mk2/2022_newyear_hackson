@@ -20,10 +20,12 @@ public class QuizScene : MonoBehaviour
     private int qransu = 0; // 出題する問題の行
     public float countdowntime = 10.0f; // 制限時間
     public Text timeText; // 時間を表示するtext型の変数
-    public static bool isAnswer = false;
+    public static bool isCollection = false;
+    public static string collectionId;
 
     void Start() {
         timeText = GameObject.Find("Canvas/Timelimit_01").GetComponentInChildren<Text> (); // 時間制限のテキストを取得
+        isCollection = false;
         // 問題の生成
         CreateQuestion();
     }
@@ -88,6 +90,7 @@ public class QuizScene : MonoBehaviour
             Text answerLabel = GameObject.Find("Canvas/Button" + i).GetComponentInChildren<Text>();
             answerLabel.text = array[i-1];
             answer = quizDatas[k][8];
+            collectionId = quizDatas[k][9];
         }
     }
 
@@ -99,8 +102,6 @@ public class QuizScene : MonoBehaviour
         //countdownが0以下になったとき
         if (countdowntime <= 0)
         {
-            //string answerText = answerget();
-            isAnswer = false;
             SceneManager.LoadScene("design_Quiz_Incorrect");
         }
     }
@@ -113,13 +114,12 @@ public class QuizScene : MonoBehaviour
         Text selectedBtn = this.GetComponentInChildren<Text> ();
         // ボタンを押したら正誤判定をして結果ページへ
         if ( selectedBtn.text == answer ) {
-            isAnswer = true;
+            isCollection = true;
             // 正解の場合のみスコアを追加する
             int addScore = (int)Math.Round(countdowntime) * 100;
             GManager.instance.AddScore(addScore);
             SceneManager.LoadScene("design_Quiz_Crrect");
         } else {
-            isAnswer = false;
             SceneManager.LoadScene("design_Quiz_Incorrect");
         }
     }

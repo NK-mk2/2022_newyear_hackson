@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using System.Linq;
 
-public class ResultScene : MonoBehaviour
+public class InCorrectScene : MonoBehaviour
 {
-    //public Text resultText; // 結果を表示するtext型の変数
     public int questionCount; // 解答済みの問題数
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("不正解");
         // 解答した問題数を増やす
         GManager.instance.AddQuestionNum();
         // 回答済みの問題数を取得
@@ -24,6 +24,7 @@ public class ResultScene : MonoBehaviour
     {
         
     }
+
 
     public void OnClick() {
         Debug.Log(questionCount);

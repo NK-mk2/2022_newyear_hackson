@@ -211,7 +211,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 266867365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90074bdf3157d462aad8b837a9299681, type: 3}
+  m_Script: {fileID: 11500000, guid: 638f337a067924421b3a6d67737ed18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   questionCount: 0
@@ -260,7 +260,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 266867369}
-        m_TargetAssemblyTypeName: ResultScene, Assembly-CSharp
+        m_TargetAssemblyTypeName: InCorrectScene, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
