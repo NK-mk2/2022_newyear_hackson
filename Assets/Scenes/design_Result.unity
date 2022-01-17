@@ -2041,6 +2041,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  Incorrect: {fileID: 386015454}
+  Advice: {fileID: 1766699506}
 --- !u!1 &764192282
 GameObject:
   m_ObjectHideFlags: 0
