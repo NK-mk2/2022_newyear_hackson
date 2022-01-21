@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0012512207, y: 0.0009861}
-  m_SizeDelta: {x: 317.84, y: 279.38}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 215, y: 214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4771061320742808478
 CanvasRenderer:
@@ -166,8 +166,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -337, y: 238}
-  m_SizeDelta: {x: 320, y: 280}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 215, y: 214}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4771061320903404524
 MonoBehaviour:
@@ -188,4 +188,4 @@ MonoBehaviour:
   spritesDirectory: Sprites/
   Name: 
   Detail: 
-  ImageName: itemicon_mini_01
+  ImageName: itemicon_mini_0
