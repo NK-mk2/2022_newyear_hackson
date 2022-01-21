@@ -12,6 +12,8 @@ public class GManager : MonoBehaviour
     [Header("問題数")] public int questionNum = 1;
     [Header("解放されたコレクション")] public int[] openCollectionNumberList = { 1 };
 
+    private AudioSource audioSource = null;
+    public AudioClip touchBtnSE;
 
 
     // シーンに一つしか作成されないように
@@ -26,6 +28,11 @@ public class GManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     /**
@@ -43,5 +50,21 @@ public class GManager : MonoBehaviour
      */
     public void AddScore(int nowScore) {
         score += nowScore;
+    }
+
+    /// <summary>
+    /// SEを鳴らす
+    /// </summary>
+    public void PlayTouchBtnSE()
+    {
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(touchBtnSE);
+            Debug.Log("音が鳴りました");
+        }
+        else
+        {
+            Debug.Log("オーディオソースが設定されていません");
+        }
     }
 }

@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/design_Quiz.unity
     guid: f22b006b13b7f574fbc0555a3314296c
   - enabled: 1
+    path: Assets/Scenes/Collection.unity
+    guid: bbe6c9473e44a46e2b44042580b342a8
+  - enabled: 1
     path: Assets/Scenes/design_Quiz_Crrect.unity
     guid: 38085194db7bd1e43bd08d61c8f03de3
   - enabled: 1

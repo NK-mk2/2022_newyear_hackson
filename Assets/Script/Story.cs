@@ -147,6 +147,7 @@ public class Story : MonoBehaviour
     */
     private void OnTouch()
     {
+        GManager.instance.PlayTouchBtnSE();
         if (_charQueue.Count > 0) OutputAllChar();
         else
         {
