@@ -184,7 +184,8 @@ MonoBehaviour:
   CollectionDetailArea: {fileID: 0}
   CollectionName: {fileID: 0}
   CollectionDetailText: {fileID: 0}
-  CollectionImage: {fileID: 0}
+  CollectionImage: {fileID: 4771061320742808477}
+  CollectionDetailImage: {fileID: 0}
   spritesDirectory: Sprites/
   Name: 
   Detail: 

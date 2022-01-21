@@ -49,6 +49,7 @@ public class Collection : MonoBehaviour
                     g.transform.position = new Vector3((-1.4f + (1.4f * x)), (2.7f + (-1.3f * y)), 0);
                     CollectionDetail Detail = g.GetComponent<CollectionDetail>();
                     Detail.ImageName += collectionDatas[collectionNum][0];
+                    Detail.SetCollectionImage();
                     Detail.Name = collectionDatas[collectionNum][1];
                     Detail.Detail = collectionDatas[collectionNum][2];
                     Detail.CollectionDetailArea = CollectionDetailArea;

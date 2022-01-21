@@ -740,6 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade: {fileID: 548991660}
+  HiScore: {fileID: 73381257}
 --- !u!1 &1078886685
 GameObject:
   m_ObjectHideFlags: 0
