@@ -28,7 +28,7 @@ public class CollectionDetail : MonoBehaviour
     public void ShowDetail()
     {
         CollectionDetailArea.SetActive(true);
-        CollectionName = CollectionDetailArea.transform.Find("CollectionName").GetComponent<Text>();
+        CollectionName = CollectionDetailArea.transform.Find("header").transform.Find("CollectionName").GetComponent<Text>();
         CollectionName.text = Name;
         CollectionDetailText = CollectionDetailArea.transform.Find("CollectionDetailText").GetComponent<Text>();
         CollectionDetailText.text = Detail;

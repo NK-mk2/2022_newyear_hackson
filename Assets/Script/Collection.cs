@@ -46,7 +46,7 @@ public class Collection : MonoBehaviour
                 if(GManager.instance.openCollectionNumberList.Contains(collectionNum))
                 {
                     GameObject g = Instantiate(collectionObjPrefab, collectionsObj.transform);
-                    g.transform.position = new Vector3((-1.8f + (1.8f * x)), (3f + (-1.8f * y)), 0);
+                    g.transform.position = new Vector3((-1.4f + (1.4f * x)), (2.7f + (-1.3f * y)), 0);
                     CollectionDetail Detail = g.GetComponent<CollectionDetail>();
                     Detail.ImageName += collectionDatas[collectionNum][0];
                     Detail.Name = collectionDatas[collectionNum][2];
@@ -56,7 +56,7 @@ public class Collection : MonoBehaviour
                 else
                 {
                     GameObject g = Instantiate(unknownCollectionObjPrefab, collectionsObj.transform);
-                    g.transform.position = new Vector3((-1.8f + (1.8f * x)), (3f + (-1.8f * y)), 0);
+                    g.transform.position = new Vector3((-1.4f + (1.4f * x)), (2.7f + (-1.3f * y)), 0);
                 }
 
                 collectionNum++;
