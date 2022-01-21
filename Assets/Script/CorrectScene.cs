@@ -11,6 +11,7 @@ public class CorrectScene : MonoBehaviour
     //public Text resultText; // 結果を表示するtext型の変数
     public int questionCount; // 解答済みの問題数
     public GameObject getCollection;
+    public Text collectionTitle; // コレクションのタイトル
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,17 @@ public class CorrectScene : MonoBehaviour
         getCollection.SetActive(false);
         // 解答した問題数を増やす
         GManager.instance.AddQuestionNum();
+        // 正解数を増やす
+        GManager.instance.AddCorrectNum();
+
         // 回答済みの問題数を取得
         questionCount = GManager.instance.questionNum;
 
-        if (QuizScene.isCollection && string.IsNullOrEmpty(QuizScene.collectionId)) {
+        if (QuizScene.isCollection && QuizScene.collectionId != 0) {
             getCollection.SetActive(true);
+
+            Text collectionTitle = GameObject.Find("Canvas/02_Get/popup/popupmid").GetComponentInChildren<Text>();
+            collectionTitle.text = "世界に" + QuizScene.collectionText + "の知識が加わった！";
         }
     }
 
@@ -30,6 +37,10 @@ public class CorrectScene : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void closeClick() {
+        getCollection.SetActive(false);
     }
 
     public void OnClick() {

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System;
 using System.IO;
 using System.Linq;
 
 public class QuizScene : MonoBehaviour
 {
+    [SerializeField] private EventSystem eventSystem;
     TextAsset quizFile; // クイズのCSVファイル
     TextAsset choiceFile; // 選択肢のCSVファイル
     public static List<string[]> quizDatas = new List<string[]>(); // クイズCSVの中身を入れるリスト
@@ -19,13 +21,17 @@ public class QuizScene : MonoBehaviour
     private int k = 0; // 配列の変数
     private int qransu = 0; // 出題する問題の行
     public float countdowntime = 10.0f; // 制限時間
-    public Text timeText; // 時間を表示するtext型の変数
+    private Image progressBar;    // 進捗バー
+    private float progressSpeed;
     public static bool isCollection = false;
-    public static string collectionId;
+    public static int collectionId;
+    public static string collectionText;
 
     void Start() {
-        timeText = GameObject.Find("Canvas/Timelimit_01").GetComponentInChildren<Text> (); // 時間制限のテキストを取得
+        progressBar = GameObject.Find("Canvas/Timelimit_01").GetComponentInChildren<Image> ();
+        progressSpeed = countdowntime;
         isCollection = false;
+        progressBar.fillAmount = 1f;
         // 問題の生成
         CreateQuestion();
     }
@@ -60,9 +66,13 @@ public class QuizScene : MonoBehaviour
             csvrow = 0; // 変数初期化
         }
 
-        qransu = qnumber[questionCount]; // シャッフルされたリストから問題を取得
+        qransu = qnumber[questionCount-1]; // シャッフルされたリストから問題を取得
         QuestionLabelSet();
         AnswerLabelSet();
+
+        // collectionId
+        collectionId = int.Parse(quizDatas[k][9]);
+        collectionText = quizDatas[k][10];
     }
 
     /**
@@ -70,12 +80,13 @@ public class QuizScene : MonoBehaviour
     */
     private void QuestionLabelSet() {
         quizDatas[k] = quizDatas[qransu]; // CSVの"qransu"行目の問題を取得
+        //Debug.Log(quizDatas[k]);
         Text qLabel = GameObject.Find("Canvas/popup/popupmid").GetComponentInChildren<Text>();
         qLabel.text = quizDatas[k][3];
 
         // ジャンルの表示
         Text genre = GameObject.Find("Canvas/popup/popupmid/Genre_02").GetComponentInChildren<Text> ();
-        genre.text = quizDatas[k][2];
+        genre.text = quizDatas[k][1] + "・" + quizDatas[k][2];
     }
 
     /**
@@ -90,7 +101,6 @@ public class QuizScene : MonoBehaviour
             Text answerLabel = GameObject.Find("Canvas/Button" + i).GetComponentInChildren<Text>();
             answerLabel.text = array[i-1];
             answer = quizDatas[k][8];
-            collectionId = quizDatas[k][9];
         }
     }
 
@@ -98,7 +108,10 @@ public class QuizScene : MonoBehaviour
     private void Countdown()
     {
         countdowntime -= Time.deltaTime; //時間をカウントダウンする
-        timeText.text = countdowntime.ToString("F1") + "秒"; //時間を表示する
+        float amount = Time.deltaTime / progressSpeed;
+        Debug.Log(amount);
+        progressBar.fillAmount -= amount;
+
         //countdownが0以下になったとき
         if (countdowntime <= 0)
         {
@@ -109,11 +122,15 @@ public class QuizScene : MonoBehaviour
     /**
     * 解答ボタンが押された時
     */
-    public void OnClick() {
+    public void OnClick(int num) {
+        // SEを鳴らす
+        GManager.instance.PlayTouchBtnSE();
         //選択したボタンのテキストラベルを取得する
-        Text selectedBtn = this.GetComponentInChildren<Text> ();
+        Text buttonText = GameObject.Find("Canvas/Button" + num).GetComponentInChildren<Text>();
         // ボタンを押したら正誤判定をして結果ページへ
-        if ( selectedBtn.text == answer ) {
+        Debug.Log(buttonText.text);
+        Debug.Log(answer);
+        if ( buttonText.text == answer ) {
             isCollection = true;
             // 正解の場合のみスコアを追加する
             int addScore = (int)Math.Round(countdowntime) * 100;

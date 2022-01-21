@@ -9,5 +9,5 @@
 &博士「お主の知識とワシの技術で平和な世界を取り戻すのだ」
 &!charaimg_sprite="polygon"="chara_002"
 &博士「協力してもらうぞ！」
-!scene="Quiz"
+!scene="design_Quiz"
 

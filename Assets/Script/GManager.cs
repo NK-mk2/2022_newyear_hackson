@@ -11,9 +11,10 @@ public class GManager : MonoBehaviour
     [Header("スコア")] public int score = 0;
     [Header("問題数")] public int questionNum = 1;
     [Header("解放されたコレクション")] public int[] openCollectionNumberList = { 1, 2 };
-
+    [Header("正解数")] public int correctNum = 0;
     private AudioSource audioSource = null;
     public AudioClip touchBtnSE;
+
 
 
     // シーンに一つしか作成されないように
@@ -39,7 +40,6 @@ public class GManager : MonoBehaviour
      * 回答した問題数を増やす
      */
     public void AddQuestionNum() {
-        Debug.Log("add");
         if ( questionNum < 11 ) {
             ++questionNum;
         }
@@ -66,5 +66,9 @@ public class GManager : MonoBehaviour
         {
             Debug.Log("オーディオソースが設定されていません");
         }
+    }
+
+    public void AddCorrectNum() {
+        ++correctNum;
     }
 }
