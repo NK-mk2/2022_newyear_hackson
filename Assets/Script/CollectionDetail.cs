@@ -34,6 +34,7 @@ public class CollectionDetail : MonoBehaviour
         CollectionDetailText.text = Detail;
         CollectionImage = CollectionDetailArea.transform.Find("CollectionImage").GetComponent<Image>();
         CollectionImage.sprite = LoadSprite(ImageName);
+        GManager.instance.PlayTouchBtnSE();
     }
 
     /**

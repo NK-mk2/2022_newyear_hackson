@@ -88,6 +88,7 @@ public class Collection : MonoBehaviour
 
     public void CloseDetail()
     {
+        GManager.instance.PlayTouchBtnSE();
         CollectionDetailArea.SetActive(false);
     }
 
@@ -97,6 +98,7 @@ public class Collection : MonoBehaviour
         Debug.Log("Press Start!");
         if (!firstPush)
         {
+            GManager.instance.PlayTouchBtnSE();
             Debug.Log("Go Next Scene!");
             fade.StartFadeOut();
             firstPush = true;

@@ -42,6 +42,7 @@ public class NameRegist : MonoBehaviour
     public void PressInputComplete()
     {
         Debug.Log("Press InputCoplete!");
+        GManager.instance.PlayTouchBtnSE();
         if (string.IsNullOrEmpty(GManager.instance.player_name))
         {
             text.SetActive(true);

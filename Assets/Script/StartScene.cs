@@ -17,6 +17,7 @@ public class StartScene : MonoBehaviour
         Debug.Log("Press Start!");
         if (!firstPush)
         {
+            GManager.instance.PlayTouchBtnSE();
             Debug.Log("Go Next Scene!");
             fade.StartFadeOut();
             firstPush = true;
@@ -30,6 +31,7 @@ public class StartScene : MonoBehaviour
         Debug.Log("Press Start!");
         if (!firstPush)
         {
+            GManager.instance.PlayTouchBtnSE();
             Debug.Log("Go Next Scene!");
             fade.StartFadeOut();
             firstPush = true;
