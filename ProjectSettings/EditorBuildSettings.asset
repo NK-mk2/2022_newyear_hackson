@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Start1.unity
+    path: 
     guid: ded186625977a4a55aaf97a19eb7e35a
   - enabled: 0
-    path: Assets/Scenes/RegistName1.unity
-    guid: b71e7c74f13c249318dcb879a8fc0817
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 6326468f62fc0794e9ca7a6675cb7076
@@ -23,16 +23,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story.unity
     guid: 3e36ab3cb40dc4d50912a2c06101bd94
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Quiz.unity
     guid: 7b2981d3ec37f4542b9358eceee6a8c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Result.unity
     guid: 82b545411f95045669611c18559fa3ec
   - enabled: 1
     path: Assets/Scenes/Finish.unity
     guid: 473a266e43fcd4d94bcd26f097c3c4fc
   - enabled: 1
-    path: Assets/Scenes/Collection.unity
-    guid: bbe6c9473e44a46e2b44042580b342a8
+    path: Assets/Scenes/design_Quiz.unity
+    guid: f22b006b13b7f574fbc0555a3314296c
+  - enabled: 1
+    path: Assets/Scenes/design_Quiz_Crrect.unity
+    guid: 38085194db7bd1e43bd08d61c8f03de3
+  - enabled: 1
+    path: Assets/Scenes/design_Quiz_Incorrect.unity
+    guid: 65bf66d880bedc44191ea0dd14cc4ebe
+  - enabled: 1
+    path: Assets/Scenes/design_Result.unity
+    guid: 2cbb4a70054e1d843a1fa014897b371b
   m_configObjects: {}
