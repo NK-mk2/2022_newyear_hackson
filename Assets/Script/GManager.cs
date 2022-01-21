@@ -10,7 +10,7 @@ public class GManager : MonoBehaviour
     [Header("名前")] public string player_name = null;
     [Header("スコア")] public int score = 0;
     [Header("問題数")] public int questionNum = 1;
-    [Header("解放されたコレクション")] public int[] openCollectionNumberList = { 1, 2 };
+    [Header("解放されたコレクション")] public List<int> openCollectionNumberList = new List<int>();
     [Header("正解数")] public int correctNum = 0;
     private AudioSource audioSource = null;
     public AudioClip touchBtnSE;

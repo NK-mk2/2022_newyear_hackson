@@ -768,6 +768,8 @@ MonoBehaviour:
   questionCount: 0
   getCollection: {fileID: 1015953283}
   collectionTitle: {fileID: 0}
+  collectionImage: {fileID: 1759203562}
+  ImageName: itemicon_mini_
 --- !u!1 &719058898
 GameObject:
   m_ObjectHideFlags: 0
