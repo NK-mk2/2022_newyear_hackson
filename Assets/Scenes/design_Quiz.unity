@@ -277,6 +277,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65395972}
   m_CullTransparentMesh: 1
+--- !u!1001 &82965211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.375878
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.0121672
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 626.7922
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268714, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 880030063953268716, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a1fd81dd0158a4d5d9fa21efc0aae9a8, type: 3}
 --- !u!1 &137444350
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +425,6 @@ GameObject:
   - component: {fileID: 190813050}
   - component: {fileID: 190813049}
   - component: {fileID: 190813048}
-  - component: {fileID: 190813051}
   m_Layer: 5
   m_Name: Button1
   m_TagString: Untagged
@@ -440,14 +496,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 190813051}
+      - m_Target: {fileID: 687827504}
         m_TargetAssemblyTypeName: QuizScene, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -490,21 +546,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190813046}
   m_CullTransparentMesh: 1
---- !u!114 &190813051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190813046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvrow: 0
-  countdowntime: 10
-  timeText: {fileID: 0}
 --- !u!1 &297881720
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +775,6 @@ GameObject:
   - component: {fileID: 532715334}
   - component: {fileID: 532715333}
   - component: {fileID: 532715332}
-  - component: {fileID: 532715331}
   m_Layer: 5
   m_Name: Button3
   m_TagString: Untagged
@@ -762,21 +802,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.59998, y: -649.9}
   m_SizeDelta: {x: 900, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &532715331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532715329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvrow: 0
-  countdowntime: 10
-  timeText: {fileID: 0}
 --- !u!114 &532715332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,14 +846,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 532715331}
+      - m_Target: {fileID: 687827504}
         m_TargetAssemblyTypeName: QuizScene, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1156,9 +1181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 0}
   csvrow: 0
   countdowntime: 10
-  timeText: {fileID: 0}
 --- !u!1 &888155465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1547,7 +1572,6 @@ GameObject:
   - component: {fileID: 1127377143}
   - component: {fileID: 1127377142}
   - component: {fileID: 1127377141}
-  - component: {fileID: 1127377140}
   m_Layer: 5
   m_Name: Button4
   m_TagString: Untagged
@@ -1575,21 +1599,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.59998, y: -822.2}
   m_SizeDelta: {x: 900, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1127377140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127377138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvrow: 0
-  countdowntime: 10
-  timeText: {fileID: 0}
 --- !u!114 &1127377141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,14 +1643,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1127377140}
+      - m_Target: {fileID: 687827504}
         m_TargetAssemblyTypeName: QuizScene, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1841,85 +1850,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232329381}
-  m_CullTransparentMesh: 1
---- !u!1 &1361067791
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1361067792}
-  - component: {fileID: 1361067794}
-  - component: {fileID: 1361067793}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1361067792
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361067791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1892961122}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -147.5, y: 0}
-  m_SizeDelta: {x: 455, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1361067793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361067791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: c5ec3a80080e5244ba9932a444216180, type: 3}
-    m_FontSize: 62
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 62
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1.3
-  m_Text: 
---- !u!222 &1361067794
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1361067791}
   m_CullTransparentMesh: 1
 --- !u!1 &1414442862
 GameObject:
@@ -2253,8 +2183,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1361067792}
+  m_Children: []
   m_Father: {fileID: 687827503}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2284,13 +2213,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: e6038beb03adfce45a987ccd68b98d20, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1892961124
@@ -2467,7 +2396,6 @@ GameObject:
   - component: {fileID: 1959756116}
   - component: {fileID: 1959756115}
   - component: {fileID: 1959756114}
-  - component: {fileID: 1959756113}
   m_Layer: 5
   m_Name: Button2
   m_TagString: Untagged
@@ -2495,21 +2423,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -478.6}
   m_SizeDelta: {x: 900, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1959756113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1959756111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f46c4e5d30a4f07bcf0784de3264bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  csvrow: 0
-  countdowntime: 10
-  timeText: {fileID: 0}
 --- !u!114 &1959756114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,14 +2467,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1959756113}
+      - m_Target: {fileID: 687827504}
         m_TargetAssemblyTypeName: QuizScene, Assembly-CSharp
         m_MethodName: OnClick
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
