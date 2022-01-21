@@ -30,6 +30,8 @@ public class CorrectScene : MonoBehaviour
 
             Text collectionTitle = GameObject.Find("Canvas/02_Get/popup/popupmid").GetComponentInChildren<Text>();
             collectionTitle.text = "世界に" + QuizScene.collectionText + "の知識が加わった！";
+
+            //GManager.instance.openCollectionNumberList.Add(QuizScene.collectionId);
         }
     }
 

@@ -12,9 +12,7 @@ public class QuizScene : MonoBehaviour
 {
     [SerializeField] private EventSystem eventSystem;
     TextAsset quizFile; // クイズのCSVファイル
-    TextAsset choiceFile; // 選択肢のCSVファイル
     public static List<string[]> quizDatas = new List<string[]>(); // クイズCSVの中身を入れるリスト
-    public static List<string[]> choinceDatas = new List<string[]>(); // 選択肢CSVの中身を入れるリスト
     public static List<int> qnumber = new List<int>(); // 出題番号リスト
     public int csvrow; // CSVファイルの行数
     public static string answer; // クイズの答え
@@ -80,7 +78,6 @@ public class QuizScene : MonoBehaviour
     */
     private void QuestionLabelSet() {
         quizDatas[k] = quizDatas[qransu]; // CSVの"qransu"行目の問題を取得
-        //Debug.Log(quizDatas[k]);
         Text qLabel = GameObject.Find("Canvas/popup/popupmid").GetComponentInChildren<Text>();
         qLabel.text = quizDatas[k][3];
 
@@ -109,7 +106,6 @@ public class QuizScene : MonoBehaviour
     {
         countdowntime -= Time.deltaTime; //時間をカウントダウンする
         float amount = Time.deltaTime / progressSpeed;
-        Debug.Log(amount);
         progressBar.fillAmount -= amount;
 
         //countdownが0以下になったとき
@@ -137,6 +133,10 @@ public class QuizScene : MonoBehaviour
             GManager.instance.AddScore(addScore);
             SceneManager.LoadScene("design_Quiz_Crrect");
         } else {
+            // 行数をキーにして間違えた行数を格納
+            //PlayerPrefs.SetInt("missrow"+qransu.ToString(), qransu);
+            PlayerPrefs.SetInt("missrow", qransu);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("design_Quiz_Incorrect");
         }
     }
