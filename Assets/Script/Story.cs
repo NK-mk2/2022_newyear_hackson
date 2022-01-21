@@ -152,8 +152,10 @@ public class Story : MonoBehaviour
         else
         {
             if (!ShowNextPage())
-                // UnityエディタのPlayモードを終了する
-                UnityEditor.EditorApplication.isPlaying = false;
+            {
+                Debug.Log("次のページがありません");
+                return;
+            }
         }
     }
 
