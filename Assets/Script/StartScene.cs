@@ -7,6 +7,8 @@ public class StartScene : MonoBehaviour
     [Header("フェード")] public FadeImage fade;
 
     private bool firstPush = false;
+    private bool goRegistName = false;
+    private bool goCollection = false;
     private bool goNextScene = false;
 
     //スタートボタンを押されたら呼ばれる
@@ -18,6 +20,20 @@ public class StartScene : MonoBehaviour
             Debug.Log("Go Next Scene!");
             fade.StartFadeOut();
             firstPush = true;
+            goRegistName = true;
+        }
+    }
+
+    //スタートボタンを押されたら呼ばれる
+    public void PressCollection()
+    {
+        Debug.Log("Press Start!");
+        if (!firstPush)
+        {
+            Debug.Log("Go Next Scene!");
+            fade.StartFadeOut();
+            firstPush = true;
+            goCollection = true;
         }
     }
 
@@ -25,8 +41,16 @@ public class StartScene : MonoBehaviour
     {
         if (!goNextScene && fade.IsFadeOutComplete())
         {
-            SceneManager.LoadScene("RegistName");
-            goNextScene = true;
+            if(goRegistName)
+            {
+                SceneManager.LoadScene("RegistName");
+                goNextScene = true;
+            }
+            else if (goCollection)
+            {
+                SceneManager.LoadScene("Collection");
+                goNextScene = true;
+            }
         }
     }
 }
