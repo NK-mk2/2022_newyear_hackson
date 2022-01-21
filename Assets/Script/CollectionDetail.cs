@@ -9,6 +9,7 @@ public class CollectionDetail : MonoBehaviour
     public Text CollectionName;
     public Text CollectionDetailText;
     public Image CollectionImage;
+    public Image CollectionDetailImage;
     [SerializeField]
     private string spritesDirectory = "Sprites/";
     public string Name = "";
@@ -22,18 +23,23 @@ public class CollectionDetail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
+
+    public void SetCollectionImage()
+    {
+        CollectionImage.sprite = LoadSprite(ImageName);
+    }
+
 
     public void ShowDetail()
     {
         CollectionDetailArea.SetActive(true);
-        CollectionName = CollectionDetailArea.transform.Find("header").transform.Find("CollectionName").GetComponent<Text>();
+        CollectionName = CollectionDetailArea.transform.Find("header/CollectionName").GetComponent<Text>();
         CollectionName.text = Name;
-        CollectionDetailText = CollectionDetailArea.transform.Find("CollectionDetailText").GetComponent<Text>();
+        CollectionDetailText = CollectionDetailArea.transform.Find("Scroll View/Viewport/Contents/CollectionDetailText").GetComponent<Text>();
         CollectionDetailText.text = Detail;
-        CollectionImage = CollectionDetailArea.transform.Find("CollectionImage").GetComponent<Image>();
-        CollectionImage.sprite = LoadSprite(ImageName);
+        CollectionDetailImage = CollectionDetailArea.transform.Find("CollectionImage").GetComponent<Image>();
+        CollectionDetailImage.sprite = LoadSprite(ImageName);
         GManager.instance.PlayTouchBtnSE();
     }
 

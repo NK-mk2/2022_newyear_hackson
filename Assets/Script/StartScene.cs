@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class StartScene : MonoBehaviour
 {
     [Header("フェード")] public FadeImage fade;
-
+    [Header("スコア")] public Text HiScore = null;
     private bool firstPush = false;
     private bool goRegistName = false;
     private bool goCollection = false;
     private bool goNextScene = false;
 
+    public void Start()
+    {
+        HiScore.text = "HI - SCORE " + GManager.instance.score.ToString();
+    }
     //スタートボタンを押されたら呼ばれる
     public void PressStart()
     {
