@@ -12,6 +12,9 @@ public class CorrectScene : MonoBehaviour
     public int questionCount; // 解答済みの問題数
     public GameObject getCollection;
     public Text collectionTitle; // コレクションのタイトル
+    public Image collectionImage;
+    private string spritesDirectory = "Sprites/";
+    public string ImageName = "itemicon_mini_";
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +30,12 @@ public class CorrectScene : MonoBehaviour
 
         if (QuizScene.isCollection && QuizScene.collectionId != 0) {
             getCollection.SetActive(true);
+            SetCollectionImage(QuizScene.collectionId);
 
             Text collectionTitle = GameObject.Find("Canvas/02_Get/popup/popupmid").GetComponentInChildren<Text>();
             collectionTitle.text = "世界に" + QuizScene.collectionText + "の知識が加わった！";
 
-            //GManager.instance.openCollectionNumberList.Add(QuizScene.collectionId);
+            GManager.instance.openCollectionNumberList.Add(QuizScene.collectionId);
         }
     }
 
@@ -53,5 +57,18 @@ public class CorrectScene : MonoBehaviour
         } else {
             SceneManager.LoadScene("design_Quiz");
         }
+    }
+
+    public void SetCollectionImage(int collectionId)
+    {
+        collectionImage.sprite = LoadSprite(ImageName + collectionId);
+    }
+
+    /**
+    * スプライトをファイルから読み出し、インスタンス化する
+    */
+    private Sprite LoadSprite(string name)
+    {
+        return Instantiate(Resources.Load<Sprite>(spritesDirectory + name));
     }
 }

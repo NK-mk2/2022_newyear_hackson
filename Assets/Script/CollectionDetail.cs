@@ -14,7 +14,7 @@ public class CollectionDetail : MonoBehaviour
     private string spritesDirectory = "Sprites/";
     public string Name = "";
     public string Detail = "";
-    public string ImageName = "itemicon_mini_0";
+    public string ImageName = "itemicon_mini_";
     // Start is called before the first frame update
     void Start()
     {
